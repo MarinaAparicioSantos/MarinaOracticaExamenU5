@@ -131,11 +131,27 @@ public class Ud5Ejercicio1 {
 	 */
 	public static Bola[] eliminaBolas(float diametro, float peso,final Bola[] array) {
 		
-		Bola[] retorno = null;
+		Bola[] retorno = array.clone();
 		
+		Bola recibida = new Bola(diametro,peso);
 		
+		int borrados = 0;
+		for (int i = 0; i < retorno.length; i++) {
+			if(recibida.equals(retorno[i])) {
+				retorno[i]=null; //Con null se hace que no se apunte a ningun sitio.
+				borrados++;
+			}
+		}
 		
-		return retorno;
+		Bola[] nuevo = new Bola[retorno.length-borrados];
+		
+		int j = 0;
+		for (int i = 0; i < retorno.length; i++) {
+			if(retorno[i]!=null)
+				nuevo[j++]=retorno[i];
+		}
+		
+		return nuevo;
 	}
 	
 	
