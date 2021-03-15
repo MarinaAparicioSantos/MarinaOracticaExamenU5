@@ -15,6 +15,8 @@ public class Bola implements Comparable<Bola> {
 	public Bola (Float diametro, Float peso) {
 		initializer(diametro, peso);
 	}
+	
+
 
 	private void initializer(Float diametro, Float peso) {
 		id = ++idGenerator;
